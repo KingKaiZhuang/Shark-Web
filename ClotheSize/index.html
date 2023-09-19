@@ -75,43 +75,7 @@
     </section>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        var originalTableData; // 存儲原始表格內容
-
-        // 在文檔準備好後執行
-        $(document).ready(function () {
-            // 複製原始表格內容
-            originalTableData = $("#sizeTable").html();
-            $("#sizeTable td:contains('/')").each(function () {
-                var text = $(this).text();
-                var newText = text.split(' / ')[0]; // 取得英吋部分
-                $(this).text(newText);
-            });
-        });
-
-        // 當切換按鈕狀態改變時
-        $("#sizeSwitch").change(function () {
-            if (this.checked) {
-                $("#sizeTable").html(originalTableData);
-                // 如果切換按鈕被打開，顯示英吋尺寸表格，隱藏公分尺寸表格
-                $("#sizeTable td:contains('/')").each(function () {
-                    var text = $(this).text();
-                    var newText = text.split(' / ')[1]; // 取得英吋部分
-                    $(this).text(newText);
-                });
-            } else {
-                // 如果切換按鈕被關閉，顯示原始表格內容
-                $("#sizeTable").html(originalTableData);
-
-                $("#sizeTable td:contains('/')").each(function () {
-                    var text = $(this).text();
-                    var newText = text.split(' / ')[0]; // 取得英吋部分
-                    $(this).text(newText);
-                });
-            }
-        });
-
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
