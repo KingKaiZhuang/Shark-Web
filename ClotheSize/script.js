@@ -1,35 +1,24 @@
-let TableData; // 存儲原始表格內容
+$(document).ready(() => {
+    let allData = $(".dataTable").html(); // 初始化表格內容
 
-// 在文檔準備好後執行
-$(document).ready(function () {
-    // 複製原始表格內容
-    TableData = $("#sizeTable").html();
-    // console.log(TableData);
-    $("#sizeTable td:contains('/')").each(function () {
-        let text = $(this).text();
-        console.log(text);
-        let newText = text.split(' / ')[0]; // 取得英吋部分
-        $(this).text(newText);
-    });
-});
-
-// 當切換按鈕狀態改變時
-$("#sizeSwitch").change(function () {
-    if (this.checked) {
-        // 切換按鈕打開，顯示英吋，隱藏公分
-        $("#sizeTable").html(TableData);
-        $("#sizeTable td:contains('/')").each(function () {
+    function updateTableContent() {
+        $(".dataTable").html(allData);  // 重置表格內容
+        console.log("Updating table content");
+        $(".dataTable td:contains('/')").each(function () {
             let text = $(this).text();
-            let newText = text.split(' / ')[1]; // 取得英吋
-            $(this).text(newText);
-        });
-    } else {
-        // 切換按鈕被關閉，顯示原始表格內容
-        $("#sizeTable").html(TableData);
-        $("#sizeTable td:contains('/')").each(function () {
-            let text = $(this).text();
-            let newText = text.split(' / ')[0]; // 取得公分
-            $(this).text(newText);
+            let centimeters = text.split('/')[0];
+            let inches = text.split('/')[1];
+            console.log("Centimeters:", centimeters, "Inches:", inches);
+            $(this).text($(".switch").hasClass("on") ? inches : centimeters);
         });
     }
+    
+
+    updateTableContent();
+
+    $(".options").click(() => {
+        console.log("Click event fired");
+        $(".switch").toggleClass("on");
+        updateTableContent();
+    });
 });
