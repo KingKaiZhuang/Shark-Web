@@ -1,5 +1,3 @@
-# Create the content for README.md based on the user's requirements
-readme_content = '''
 # 衣服尺碼轉換小工具
 
 ## 簡介
