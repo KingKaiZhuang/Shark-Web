@@ -1,0 +1,55 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#size-table {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 創建具有固定寬度和水平滾動條的容器 */
+.scroll-container {
+    max-width: 800px;
+    overflow-x: scroll;
+    white-space: nowrap;
+    border: 1px solid #ccc;
+    display: flex;
+    padding: 16px;
+}
+
+/* 设置表格的边框样式和边框宽度 */
+#sizeTable {
+    border-collapse: collapse;
+    /* 合并边框，确保边框不重叠 */
+    width: 100%;
+    /* 表格宽度占据父容器的100% */
+    border: 1px solid #ccc;
+    /* 添加表格外边框 */
+}
+
+/* 设置表格头部单元格样式 */
+#sizeTable th {
+    background-color: #f2f2f2;
+    /* 表头背景颜色 */
+    text-align: center;
+    /* 文本居中 */
+    padding: 8px;
+    /* 单元格内边距 */
+    border: 1px solid #ccc;
+    /* 单元格边框 */
+}
+
+/* 设置表格数据单元格样式 */
+#sizeTable td {
+    text-align: center;
+    /* 文本居中 */
+    padding: 8px;
+    /* 单元格内边距 */
+    border: 1px solid #ccc;
+    /* 单元格边框 */
+}
