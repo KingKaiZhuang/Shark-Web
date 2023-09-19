@@ -4,11 +4,12 @@ let TableData; // 存儲原始表格內容
 $(document).ready(function () {
     // 複製原始表格內容
     TableData = $("#sizeTable").html();
+    // console.log(TableData);
     $("#sizeTable td:contains('/')").each(function () {
         let text = $(this).text();
+        console.log(text);
         let newText = text.split(' / ')[0]; // 取得英吋部分
         $(this).text(newText);
-        console.log(this);
     });
 });
 
