@@ -9,7 +9,21 @@ $(document).ready(() => {
             let centimeters = text.split('/')[0];
             let inches = text.split('/')[1];
             console.log("Centimeters:", centimeters, "Inches:", inches);
-            $(this).text($(".switch").hasClass("on") ? inches : centimeters);
+            if($(".switch").hasClass("on")) {
+                $(this).text(inches);
+                $(".scrollTable").css("background-color","#00094e");
+                $(".scrollTable .title h2").text("成人 修身TEE/通用褲");
+                $("#clotheData > div.scrollTable > table > tbody > tr:nth-child(8) > td").css(
+                    {
+                        "background-color" : "#fff",
+                        "color" : "#000"
+                    }
+                )
+            }else{
+                $(this).text(centimeters);
+                $(".scrollTable").css("background-color","#ff7300")
+                $(".scrollTable .title h2").text("成人");
+            }
         });
     }
     

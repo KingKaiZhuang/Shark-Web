@@ -1,16 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;800;900&family=Roboto+Mono:wght@200;300;400;500;600;700&display=swap');
 *,h1,h2,h3,h4,h5,h6,p {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Roboto Mono', monospace;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     border-radius: 1px;
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: #6b6b6b;
-}
+} */
 
 body {
     width: 100%;
@@ -70,27 +73,62 @@ body {
 
 .scrollTable {
     max-width: 800px;
-    overflow-x: scroll;
-    white-space: nowrap;
+    /* overflow-x: scroll; */
+    /* white-space: nowrap; */
     border: 1px solid #cecece;
+    padding: 5px;
+}
 
+.scrollTable .title h2 {
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    padding-block: 2px;
+    font-size: 26px;
+}
+
+#clotheData > div.scrollTable > table > thead > tr > th:nth-child(4) {
+    font-size: 15px;
 }
 
 .dataTable {
     width: 100%;
+    border-collapse: separate;
+    border-spacing: 3px;
+}
+
+#clotheData > div.scrollTable > table > thead > tr > th {
+    padding: 0 8px;
+}
+#clotheData > div.scrollTable > table > thead > tr > th:nth-child(4) {
+    line-height: 15px;
 }
 
 #clotheData > div > table > thead > tr > th,
-
 #clotheData > div > table > tbody > tr > td {
-    padding: 12px;
+    background-color: #fff;
+    padding: 3px;
+    font-weight: 800;
     border: 1px solid #cecece;
     text-align: center;
+}
+
+#clotheData > div.scrollTable > table > tbody > tr:nth-child(1) > td,
+#clotheData > div.scrollTable > table > tbody > tr:nth-child(3) > td,
+#clotheData > div.scrollTable > table > tbody > tr:nth-child(5) > td,
+#clotheData > div.scrollTable > table > tbody > tr:nth-child(7) > td {
+    background-color: #ccc;
+}
+
+#clotheData > div.scrollTable > table > tbody > tr:nth-child(8) > td {
+    background-color: transparent;
+    color: #fff;
+    border: 3px solid #fff;
 }
 
 @media (max-width:768px) {
     .scrollTable {
         min-width: 300px;
-        max-width: 350px;
+        max-width: 380px;
     }
 }
