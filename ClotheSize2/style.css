@@ -74,7 +74,7 @@ body {
 .scrollTable {
     max-width: 800px;
     /* overflow-x: scroll; */
-    /* white-space: nowrap; */
+    white-space: nowrap;
     border: 1px solid #cecece;
     padding: 5px;
 }
@@ -126,9 +126,9 @@ body {
     border: 3px solid #fff;
 }
 
-@media (max-width:768px) {
+/* @media (max-width:768px) {
     .scrollTable {
         min-width: 300px;
-        max-width: 380px;
+        max-width: 390px;
     }
-}
+} */
